@@ -10,9 +10,11 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.cinelist.data.Api
+import com.example.cinelist.components.MovieTestScreen
+import com.example.cinelist.data.remote.RetrofitInstance
 import com.example.cinelist.ui.theme.CinelistTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             CinelistTheme {
 
-                    Greeting()
+                MovieTestScreen()
 
             }
         }
@@ -31,10 +33,6 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting() {
-    val api = Api()
-
-    api.GetMovie()
-
 }
 
 @Preview(showBackground = true)
